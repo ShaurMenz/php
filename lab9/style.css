@@ -1,0 +1,267 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0E51A7;
+    color: #ffffff;
+    padding: 15px 30px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.header-text h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.header-text p {
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+main {
+    max-width: 1400px;  /* Увеличил ширину для таблицы с 10 колонками */
+    margin: 30px auto 80px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #000000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #444444;
+    color: #dddddd;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;  /* ← ВАЖНО: Добавляет горизонтальную прокрутку если таблица не влезает */
+}
+
+/* Стили для меню */
+#menu {
+    margin-bottom: 20px;
+}
+
+#menu a, #submenu a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #0E51A7;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#menu a.selected {
+    background-color: #ff0000;
+    color: white;
+}
+
+#submenu {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+}
+
+#submenu a {
+    background-color: #6c757d;
+    padding: 5px 15px;
+    font-size: 0.9em;
+}
+
+#submenu a.selected {
+    background-color: #ff0000;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
+    font-size: 14px;  /* Уменьшил шрифт */
+    table-layout: fixed;  /* ← ВАЖНО: Фиксированная ширина колонок */
+    word-wrap: break-word;  /* ← ВАЖНО: Перенос длинных слов */
+}
+
+th, td {
+    border: 1px solid #0E51A7;
+    padding: 8px 5px;  /* Уменьшил отступы */
+    text-align: left;
+    vertical-align: top;  /* Выравнивание по верху */
+    overflow-wrap: break-word;  /* Перенос слов */
+    word-break: break-word;
+}
+
+th {
+    background-color: #0E51A7;
+    color: white;
+    font-size: 13px;
+}
+
+/* Задаём пропорциональную ширину колонок */
+table th:nth-child(1) { width: 10%; }  /* Фамилия */
+table th:nth-child(2) { width: 8%; }   /* Имя */
+table th:nth-child(3) { width: 10%; }  /* Отчество */
+table th:nth-child(4) { width: 5%; }   /* Пол */
+table th:nth-child(5) { width: 10%; }  /* Дата рождения */
+table th:nth-child(6) { width: 12%; }  /* Телефон */
+table th:nth-child(7) { width: 12%; }  /* Адрес */
+table th:nth-child(8) { width: 15%; }  /* E-mail */
+table th:nth-child(9) { width: 18%; }  /* Комментарий */
+
+/* Пагинация */
+#pages {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pages a, #pages span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 3px;
+    border: 1px solid #0E51A7;
+    text-decoration: none;
+    color: #0E51A7;
+}
+
+#pages a:hover {
+    border: 2px solid #0E51A7;
+    margin: 0 2px;
+}
+
+#pages span {
+    background-color: #0E51A7;
+    color: white;
+    font-weight: bold;
+}
+
+/* Формы */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="submit"] {
+    background-color: #0E51A7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0a3a7a;
+}
+
+/* Ссылки для редактирования/удаления */
+#edit_links, #delete_links {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #e7f3ff;
+    border-radius: 5px;
+}
+
+#edit_links a, #delete_links a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid #0E51A7;
+    text-decoration: none;
+    color: #0E51A7;
+    border-radius: 3px;
+}
+
+#edit_links div, #delete_links div {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    background: #0E51A7;
+    border: 1px solid #0E51A7;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Для мобильных устройств */
+@media screen and (max-width: 1200px) {
+    main {
+        max-width: 100%;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 5px 3px;
+    }
+}
